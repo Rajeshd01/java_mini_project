@@ -5,7 +5,7 @@ public class mini_project {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please Input Your Choice \n 1. List Even Number \n 2. Sum Of Even Numer \n 3. Count of even number \n 4. Prime Number \n 5. Factorial of a number \n 6. List Odd Number \n 7. Sum Of Odd Numer \n 8. Count of Odd number \n 9. palindrome of Number \n 10. String palindrome");
+        System.out.println("Please Input Your Choice \n 1. List Even Number \n 2. Count Of Even Numer \n 3. Sum of even number \n 4. Prime Number \n 5. Factorial of a number \n 6. List Odd Number \n 7. Sum Of Odd Numer \n 8. Count of Odd number \n 9. palindrome of Number \n 10. String palindrome");
         int choice = in.nextInt();
         switch (choice) {
             case 1:
@@ -21,14 +21,26 @@ public class mini_project {
                 break;
 
             case 2:
-                System.err.println("Sum Of Even Number");
+                System.err.println("Count Of Even Number");
+                System.out.println("Enter The Start Range: ");
+                int numCst = in.nextInt();
+                System.out.println("Enter The End Range:");
+                int numCed = in.nextInt();
+                System.err.println("\n");
+
+                CountEven(numCed, numCst);
+                break;
+
+            case 3:
+                System.out.println("Sum of Even Number");
                 System.out.println("Enter The Start Range: ");
                 int numSst = in.nextInt();
                 System.out.println("Enter The End Range:");
                 int numSed = in.nextInt();
                 System.err.println("\n");
 
-                SumEven(numSed, numSst);
+                SumEven(numSst, numSed);
+
         }
     }
 
@@ -41,16 +53,26 @@ public class mini_project {
         }
     }
 
-    public static void SumEven(int numSed, int numSst) {
+    public static void CountEven(int numCed, int numCst) {
         int count = 0;
-        for (int i= numSst; i<= numSed; i++){
-            if (i %2 ==0){
+        for (int i = numCst; i <= numCed; i++) {
+            if (i % 2 == 0) {
                 count++;
             }
         }
 
         System.err.println("The Total Even Digit From the Range is :" + count);
 
+    }
+
+    public static void SumEven(int numSst, int numsed) {
+        int sum = 0;
+        for (int i = numSst; i <= numsed; i++) {
+            if (i % 2 == 0) {
+                sum += i;
+            }
+        }
+        System.out.println("The Sum Of Even Digint is :" + sum);
 
     }
 }
