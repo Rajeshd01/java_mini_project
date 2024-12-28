@@ -5,7 +5,7 @@ public class mini_project {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Please Input Your Choice \n 1. List Even Number \n 2. Count Of Even Numer \n 3. Sum of even number \n 4. Prime Number \n 5. Factorial of a number \n 6. List Odd Number \n 7. Sum Of Odd Numer \n 8. Count of Odd number \n 9. palindrome of Number \n 10. String palindrome");
+        System.out.println("Please Input Your Choice \n 1. List Even Number \n 2. Count Of Even Numer \n 3. Sum of even number \n 4. Prime Number \n 5. Factorial of a number \n 6. List Odd Number \n 7. Sum Of Odd Numer \n 8. Count of Odd number \n 9. palindrome of Number \n 10. String palindrome \n 11. Exit");
         System.out.print("Enter Your Choice: ");
         int choice = in.nextInt();
 
@@ -56,13 +56,27 @@ public class mini_project {
                 System.out.println("Enter the number To factorial");
                 int factnum = in.nextInt();
                 System.err.println("\n");
+
+                factorial(factnum);
+
+            case 6:
+                System.out.println("List Of Odd Number");
+                System.out.println("Enter The Start Range: ");
+                int numOSt = in.nextInt();
+                System.out.println("Enter The End Range:");
+                int numOEd = in.nextInt();
+                System.err.println("\n");
+
+                ListOdd(numOSt, numOEd);
+
+                break;
         }
     }
 
     public static void ListEven(int numSt, int numEd) {
         for (int i = numSt; i <= numEd; i++) {
             if (i % 2 == 0) {
-                System.out.println(i);
+                System.out.println("The Even Number From " + numSt + " To " + numEd + " is:" + i);
 
             }
         }
@@ -76,7 +90,7 @@ public class mini_project {
             }
         }
 
-        System.err.println("The Total Even Digit From the Range is :" + count);
+        System.err.println("The Total Even Digit From" + numCst + "To" + numCed + " is :" + count);
 
     }
 
@@ -87,7 +101,7 @@ public class mini_project {
                 sum += i;
             }
         }
-        System.out.println("The Sum Of Even Digint is :" + sum);
+        System.out.println("The Sum Of Even Digint From" + numSst + "To" + numsed + " is :" + sum);
 
     }
 
@@ -105,5 +119,22 @@ public class mini_project {
             System.out.println("Its Not a Prime Number");
         }
 
+    }
+
+    public static void factorial(int factnum) {
+        int fact = 1;
+        for (int i = factnum; i >= 1; --i) {
+            fact = fact * i;
+        }
+        System.out.println("The Factorial of " + factnum + " is :" + fact);
+    }
+
+    public static void ListOdd(int numOSt, int numOEd) {
+        for (int i = numOSt; i <= numOEd; i++) {
+            if (i % 2 == 1) {
+                System.out.println("The Odd Number From " + numOSt + " To " + numOEd + " is:" + i);
+
+            }
+        }
     }
 }
