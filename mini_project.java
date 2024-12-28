@@ -6,7 +6,9 @@ public class mini_project {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Please Input Your Choice \n 1. List Even Number \n 2. Count Of Even Numer \n 3. Sum of even number \n 4. Prime Number \n 5. Factorial of a number \n 6. List Odd Number \n 7. Sum Of Odd Numer \n 8. Count of Odd number \n 9. palindrome of Number \n 10. String palindrome");
+        System.out.print("Enter Your Choice: ");
         int choice = in.nextInt();
+
         switch (choice) {
             case 1:
                 System.out.println("List Of Even Number");
@@ -41,6 +43,19 @@ public class mini_project {
 
                 SumEven(numSst, numSed);
 
+            case 4:
+                System.out.println("Check Prime Number");
+                System.out.println("Enter The Number To Check: ");
+                int primenum = in.nextInt();
+                System.err.println("\n");
+
+                Prime(primenum);
+
+            case 5:
+                System.out.println("Factorial Of a Number");
+                System.out.println("Enter the number To factorial");
+                int factnum = in.nextInt();
+                System.err.println("\n");
         }
     }
 
@@ -73,6 +88,22 @@ public class mini_project {
             }
         }
         System.out.println("The Sum Of Even Digint is :" + sum);
+
+    }
+
+    public static void Prime(int primenum) {
+        int count = 0;
+        for (int i = 1; i <= primenum; i++) {
+            if (primenum % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 2) {
+            System.out.println("Its a Prime Number");
+        } else {
+            System.out.println("Its Not a Prime Number");
+        }
 
     }
 }
